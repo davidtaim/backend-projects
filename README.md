@@ -14,26 +14,26 @@ cd task-tracker-cli
 Run the following command to run the project (php 8.3 or above, should be installed):
 
 ```bash
-./task-cli --help # To see the list of available commands
+php task-cli.php --help # To see the list of available commands
 
 # To add a task
-./task-cli add "Do some code"
+php task-cli.php add "Do some code"
 
 # To update a task
-./task-cli update 1 "Do some code and drin coffee"
+php task-cli.php update 1 "Do some code and drin coffee"
 
 # To delete a task
-./task-cli delete 1
+php task-cli.php delete 1
 
 # To mark a task as [in-progress|done|todo]
-./task-cli mark-in-progress 1
-./task-cli mark-done 1
-./task-cli mark-todo 1
+php task-cli.php mark-in-progress 1
+php task-cli.php mark-done 1
+php task-cli.php mark-todo 1
 
 # To list all tasks
-./task-cli list
+php task-cli.php list
 # To list all tasks with an additional filter [done|todo|in-progress]
-./task-cli list done
-./task-cli list todo
-./task-cli list in-progress
+php task-cli.php list done
+php task-cli.php list todo
+php task-cli.php list in-progress
 ```

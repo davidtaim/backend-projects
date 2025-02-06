@@ -45,6 +45,7 @@ class TaskCli
     public function __construct()
     {
         $this->tasks = $this->getOrCreate();
+
     }
 
     public function run(array $argv): void
@@ -52,7 +53,7 @@ class TaskCli
         $commands = array_map(fn($case) => $case->value, TaskCliActions::cases());
 
         if (count($argv) <= 0 || !in_array($argv[0], $commands)) {
-            print "./task-cli --help to see available commands" . PHP_EOL;
+            print "php task-cli.php --help to see available commands" . PHP_EOL;
             return;
         }
 
@@ -74,14 +75,15 @@ class TaskCli
 
     private function printHelp(): string
     {
-        $result = "./task-cli create [task]\n";
-        $result .= "./task-cli update [id] [task]\n";
-        $result .= "./task-cli delete [id]\n";
-        $result .= "./task-cli mark-in-progress [id]\n";
-        $result .= "./task-cli mark-done [id]\n";
-        $result .= "./task-cli mark-todo [id]\n";
-        $result .= "./task-cli list [todo|in-progress|done]\n";
-        $result .= "./taskcli --help to see this.\n";
+        $script = "php task-cli.php";
+        $result = "$script create [task]\n";
+        $result .= "$script [id] [task]\n";
+        $result .= "$script delete [id]\n";
+        $result .= "$script mark-in-progress [id]\n";
+        $result .= "$script mark-done [id]\n";
+        $result .= "$script mark-todo [id]\n";
+        $result .= "$script list [todo|in-progress|done]\n";
+        $result .= "$script --help to see this.\n";
         return $result;
     }
 
@@ -268,3 +270,5 @@ class TaskCli
         return $tasks;
     }
 }
+
+(new TaskCli)->run(array_slice($argv, 1));

@@ -1,6 +1,0 @@
-#!/usr/bin/env php
-<?php
-
-require_once "main.php";
-
-(new TaskCli)->run(array_slice($argv, 1));
