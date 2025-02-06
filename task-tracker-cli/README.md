@@ -7,8 +7,8 @@ Sample solution for the [task-tracker](https://roadmap.sh/projects/task-tracker)
 Clone the repository:
 
 ```bash
-git clone https://github.com/davidtaim/task-tracker-cli
-cd task-tracker-cli
+git clone https://github.com/davidtaim/backend-projects
+cd backend-projects/task-tracker-cli
 ```
 
 Run the following command to run the project (php 8.3 or above, should be installed):
